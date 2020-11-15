@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from './components/navbar/navbar';
 import StockButler from './components/stockButler/stockButler'
+import NewsWall from './components/newsWall/newsWall';
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,8 +16,9 @@ class App extends Component {
         return (
             <Container>
                 <Router>
-                    <Row><Col><StockButler></StockButler></Col></Row>
-                    <Row><Col><NavBar></NavBar></Col></Row>
+                    <Row><StockButler></StockButler></Row>
+                    <Row><NavBar></NavBar></Row>
+                    <Row><NewsWall></NewsWall></Row>
                 </Router>
             </Container>
         );
