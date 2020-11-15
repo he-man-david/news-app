@@ -5,18 +5,34 @@ import './navbar.css';
 class NavBar extends Component {
     state = { 
         navItems: [
-            { name: 'Top News', url: '/top-news', id: 'topNews' },
-            
-            { name: 'Search', url: '/search-news', id: 'searchNews' }
+            { name: 'Top News', url: '/top-news', id: 'topNewsNav', selected: true },
+            { name: 'Markets', url: '/markets', id: 'marketsNav', selected: false },
+            { name: 'Portfolio', url: '/portfolio', id: 'portfolio', selected: false }
         ]
     }
+
+    handleNavSelect = newSelected => {
+        let navItems = this.state.navItems.map(navItem => {
+            let {id, selected} = navItem;
+            if (selected) navItem.selected = false;
+            else if (id === newSelected) navItem.selected = true;
+            return navItem;
+        });
+        this.setState({navItems});
+    }
+
     render() { 
         return (
             <div className="navMain">
                 <div className="linksDiv">
-                    <Link to="/" className="navLink selected" role="button">Home</Link>
-                    <Link to="/others" className="navLink" role="button">others</Link>
-                    <Link to="/something" className="navLink" role="button">Something</Link>
+                    {this.state.navItems.map(({name, url, id, selected}) => {
+                        return <Link to={url} 
+                                     className={`navLink ${selected && 'selected'}`}
+                                     role="button"
+                                     key={id}
+                                     onClick={() => this.handleNavSelect(id)}
+                                     >{name}</Link>
+                    })}
                 </div>
             </div>
         )
