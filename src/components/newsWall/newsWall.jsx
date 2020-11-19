@@ -3,6 +3,7 @@ import './newsWall.css';
 import SearchBar from '../searchBar/searchBar';
 import NewsItem from '../newsItem/newsItem';
 import NewsApi from '../../apis/newsApis';
+import { CardDeck } from 'react-bootstrap';
 
 function NewsWall({ routeName }) {
     const [newsList, setNewsList] = React.useState([]);
@@ -24,7 +25,7 @@ function NewsWall({ routeName }) {
         <div id="newsWallMain">
             <SearchBar handleSearch={handleSearch}></SearchBar>
             <h1>{routeName} below...</h1>
-            <div>
+            <div className="newsListMain">
                 {newsList.map((newsItem, i) => {
                     return <NewsItem key={i} newsItem={newsItem}></NewsItem>
                 })}
