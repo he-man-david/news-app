@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import NavBar from './components/navbar/navbar';
-import StockButler from './components/stockButler/stockButler'
-import NewsWall from './components/newsWall/newsWall';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import StockButler from './components/stockButler/stockButler';
+import NavRoutes from './components/routeConfigs/navRoutes';
+import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
+    // TODO: do I need state here? Maybe convert in future;
     state = {  }
     render() { 
         return (
@@ -18,7 +14,7 @@ class App extends Component {
                 <Router>
                     <Row><StockButler></StockButler></Row>
                     <Row><NavBar></NavBar></Row>
-                    <Row><NewsWall></NewsWall></Row>
+                    <NavRoutes></NavRoutes>
                 </Router>
             </Container>
         );

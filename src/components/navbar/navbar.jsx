@@ -5,8 +5,10 @@ import './navbar.css';
 class NavBar extends Component {
     state = { 
         navItems: [
-            { name: 'Top News', url: '/top-news', id: 'topNewsNav', selected: true },
+            { name: 'Headlines', url: '/', id: 'headlineNav', selected: true },
             { name: 'Markets', url: '/markets', id: 'marketsNav', selected: false },
+            { name: 'Technology', url: '/tech', id: 'techNewsNav', selected: false },
+            { name: 'World', url: '/world', id: 'worldNewsNav', selected: false },
             { name: 'Portfolio', url: '/portfolio', id: 'portfolio', selected: false }
         ]
     }
@@ -24,6 +26,7 @@ class NavBar extends Component {
     render() { 
         return (
             <div className="navMain">
+                <h1 id="mainHeaderBrand">The David Times</h1>
                 <div className="linksDiv">
                     {this.state.navItems.map(({name, url, id, selected}) => {
                         return <Link to={url} 
