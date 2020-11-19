@@ -7,7 +7,7 @@ class NavBar extends Component {
         navItems: [
             { name: 'Headlines', url: '/', id: 'headlineNav', selected: true },
             { name: 'Markets', url: '/markets', id: 'marketsNav', selected: false },
-            { name: 'Technology', url: '/tech', id: 'techNewsNav', selected: false },
+            { name: 'Technology', url: '/technology', id: 'techNewsNav', selected: false },
             { name: 'World', url: '/world', id: 'worldNewsNav', selected: false },
             { name: 'Portfolio', url: '/portfolio', id: 'portfolio', selected: false }
         ]

@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import './newsWall.css';
 import SearchBar from '../searchBar/searchBar';
 import NewsItem from '../newsItem/newsItem';
+import NewsApi from '../../apis/newsApis';
 
 function NewsWall({ routeName }) {
     const [newsList, setNewsList] = React.useState([]);
 
     React.useEffect(() => {
-        console.log("routeName has changed ---> ", routeName);
-        // return () => {
-        //     cleanup
-        // };
+        try {
+            NewsApi(routeName).then(res => setNewsList(res));
+        } catch (e) {
+            console.error(e);
+        }
     }, [routeName]);
 
     const handleSearch = search => {
@@ -21,9 +23,10 @@ function NewsWall({ routeName }) {
     return (
         <div id="newsWallMain">
             <SearchBar handleSearch={handleSearch}></SearchBar>
+            <h1>{routeName} below...</h1>
             <div>
-                {newsList.map(newsItem => {
-                    return <newsItem newsItem={newsItem}></newsItem>
+                {newsList.map((newsItem, i) => {
+                    return <NewsItem key={i} newsItem={newsItem}></NewsItem>
                 })}
             </div>
         </div>

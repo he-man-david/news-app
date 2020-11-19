@@ -7,10 +7,16 @@ const NavRoutes = () => {
     return (
         <Switch>
             <Route exact path="/">
-                <Row><NewsWall routeName="headline"></NewsWall></Row>
+                <Row><NewsWall routeName="headlines"></NewsWall></Row>
             </Route>
-            <Route path="/tech">
+            <Route exact path="/markets">
+                <Row><NewsWall routeName="markets"></NewsWall></Row>
+            </Route>
+            <Route path="/technology">
                 <Row><NewsWall routeName="technology"></NewsWall></Row>
+            </Route>
+            <Route exact path="/world">
+                <Row><NewsWall routeName="world"></NewsWall></Row>
             </Route>
             <Route path="/portfolio">
                 <Row><h1>Portfolio</h1></Row>
