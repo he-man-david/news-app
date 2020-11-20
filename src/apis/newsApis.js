@@ -51,17 +51,30 @@ const getWorldNews = async (from=1) => {
     } else throw 'network err with call from getWorldNews API';
 }
 
+const getSearchResults = async (searchQuery, from=1) => {
+    const fromDate = fromPastXDays(from);
+    let res = await fetch(
+        `https://newsapi.org/v2/everything?q=${searchQuery}&language=en&from=${fromDate}&pageSize=18&sortBy=popularity&apiKey=`
+        + process.env.REACT_APP_NEWS_API_KEY);
+    if (res.ok) {
+        res = await res.json();
+        return extractNewsData(res);
+    } else throw 'network err with call from getSearchResults API';
+}
+
 // api directory, name : function
 const newsApiDirectory = {
     "headlines": getHeadlines,
     "markets": getMarketsNews,
     "technology": getTechnologyNews,
-    "world": getWorldNews
+    "world": getWorldNews,
+    "search": getSearchResults
 }
 
 // api controller, take in name of api, return call
-const NewsApi = (apiName) => {
-    if (newsApiDirectory[apiName]) return newsApiDirectory[apiName]();
+const NewsApi = (apiName, searchQuery='', from=1) => {
+    if (apiName === 'search') return newsApiDirectory[apiName](searchQuery, from);
+    else if (newsApiDirectory[apiName]) return newsApiDirectory[apiName]();
     else throw 'api does not exist in newsApiDirectory';
 }
  

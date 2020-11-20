@@ -1,4 +1,3 @@
-import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import { Row } from 'react-bootstrap';
 import NewsWall from '../newsWall/newsWall';
@@ -17,6 +16,9 @@ const NavRoutes = () => {
             </Route>
             <Route exact path="/world">
                 <Row><NewsWall routeName="world"></NewsWall></Row>
+            </Route>
+            <Route path="/search/:searchQuery">
+                <Row><NewsWall routeName="search"></NewsWall></Row>
             </Route>
             <Route path="/portfolio">
                 <Row><h1>Portfolio</h1></Row>
