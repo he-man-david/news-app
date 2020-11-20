@@ -17,6 +17,7 @@ Expiration for current API key 12/10/2020
 
 
 Start with chapter 1, and work your way up. Each chapter will have it's own assignments.
+Simply checkout branch "chapter-1" for instructions. The solutions are in "chapter-1-answer" to help you out.
 
 PREREQUISITES:
 1. have Node version 10+
