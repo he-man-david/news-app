@@ -27,16 +27,7 @@ class NavBar extends Component {
         return (
             <div className="navMain">
                 <h1 id="mainHeaderBrand">The David Times</h1>
-                <div className="linksDiv">
-                    {this.state.navItems.map(({name, url, id, selected}) => {
-                        return <Link to={url} 
-                                     className={`navLink ${selected && 'selected'}`}
-                                     role="button"
-                                     key={id}
-                                     onClick={() => this.handleNavSelect(id)}
-                                     >{name}</Link>
-                    })}
-                </div>
+                {/* create your navigation here using the state provided */}
             </div>
         )
     }

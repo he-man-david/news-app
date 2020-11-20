@@ -1,22 +1,9 @@
 # news-app
-It's a fun news app I built to test out new react hooks.
+Chapter 1:
 
-1. clone project -- npm install
-2. create api keys from newsapi.org
-3. add it to .env file
-4. npm run start
+For this chapter, I want you to build a navbar. For simplicity, most of the code has
+already been setup for you. Just go to /components/navbar folder, and write the JSX
+for creating the navigation links.
 
-WARNING! 
-    1. Stupid newsapi.org api_key only works for free for 1 month. Sucks...
-    Will need to get new api_key if expired.
-    2. API KEY should not be stored in client side. Before deploying live, move to backend.
-
-Expiration for current API key 12/10/2020
-
-
-Start with chapter 1, and work your way up. Each chapter will have it's own assignments.
-
-PREREQUISITES:
-1. have Node version 10+
-2. have npm version 5+
-
+There's no right or wrong way of doing it. This is just for practice. You can get the solutions
+by checking out branch "chapter-1-answer" to see how it can be done.

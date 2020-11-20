@@ -1,24 +1,23 @@
 import { Switch, Route } from "react-router-dom";
 import { Row } from 'react-bootstrap';
-import NewsWall from '../newsWall/newsWall';
 
 const NavRoutes = () => {
     return (
         <Switch>
             <Route exact path="/">
-                <Row><NewsWall routeName="headlines"></NewsWall></Row>
+                <Row><h1>Headlines below...</h1></Row>
             </Route>
             <Route exact path="/markets">
-                <Row><NewsWall routeName="markets"></NewsWall></Row>
+                <Row><h1>Markets below...</h1></Row>
             </Route>
             <Route path="/technology">
-                <Row><NewsWall routeName="technology"></NewsWall></Row>
+                <Row><h1>technology below...</h1></Row>
             </Route>
             <Route exact path="/world">
-                <Row><NewsWall routeName="world"></NewsWall></Row>
+                <Row><h1>world below...</h1></Row>
             </Route>
             <Route path="/search/:searchQuery">
-                <Row><NewsWall routeName="search"></NewsWall></Row>
+                <Row><h1>search results below...</h1></Row>
             </Route>
             <Route path="/portfolio">
                 <Row><h1>Portfolio</h1></Row>
