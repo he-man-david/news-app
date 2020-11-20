@@ -12,3 +12,11 @@ WARNING!
     2. API KEY should not be stored in client side. Before deploying live, move to backend.
 
 Expiration for current API key 12/10/2020
+
+
+Start with chapter 1, and work your way up. Each chapter will have it's own assignments.
+
+PREREQUISITES:
+1. have Node version 10+
+2. have npm version 5+
+
